@@ -1,0 +1,156 @@
+body
+{
+   width: 940px;
+
+   background: #e6e5e5;
+}
+
+.titulo_principal
+{
+   display: inline-block;
+
+   color: blue;
+
+   font-size: 60px;
+
+   margin: 0 20px;
+   
+   top: -20px;
+}
+
+.instrucciones
+{
+   font-size: 11px;
+
+   font-weight: bold;
+
+   margin: 0 10%;
+}
+
+#Imagen_remplazo, #mensaje_no_encontrado
+{
+   width: 208px;
+
+   height: 450px;
+}
+
+.area_de_entrada
+{
+   width: 750px; 
+
+   display: inline-block;
+
+}
+
+::placeholder
+{
+   color: blue;
+}
+
+#entrada
+{
+   width: 100%;
+
+   height: 300px;
+
+   margin: 10% 0 0 10%;
+
+   background: #e6e5e5;
+
+   border-radius: 5px;
+
+   border-color: #e6e5e5;
+
+   font-style: italic;
+
+   font-size: 20px;
+
+   color: blue;
+}
+
+#entrada:hover  
+{
+   border-color: rgb(0, 128, 255);
+}
+
+#Incriptar, #Desincriptar,#Copiar
+{
+   width: auto;
+
+   border-radius: 10px;
+
+   padding: 10px 80px;
+
+   font-size: 13px;
+
+   font-weight: bold; 
+
+}
+
+#Incriptar
+{
+   color: white;
+
+   background: rgb(28, 12, 143);
+
+   margin: 0 10%;
+}
+
+#Desincriptar,#Copiar
+{
+   background: white;
+
+   color: rgb(0, 128, 255);
+
+   border-color: rgb(0, 128, 255);
+
+   margin: auto;
+}
+
+.area_de_salida
+{
+   width: 190px;
+   
+   position: absolute;
+
+   border-radius: 10px;
+
+   top: 80px;
+
+   left:860px;
+
+}
+
+#salida
+{
+   width: 200px;
+
+   height: 396px;
+
+   border: none;
+
+   font-size: 20px;
+}
+
+@media screen and (max-width:480px) /*media query recuerso para creear excepciones o condiciones,esta dice podemos crear un estilo visual que incluye pantallas de hasta 480px.*/
+{
+
+body,header, .area_de_entrada, .area_de_salida,#Imagen_remplazo,#mensaje_no_encontrado
+{
+   width: auto;
+
+   margin: auto;
+
+   position: static;
+
+}
+
+#Incriptar,#Desincriptar,#Imagen_remplazo,#mensaje_no_encontrado,#entrada,#salida
+{
+   width: 100%;
+
+   margin: auto;
+}
+
+
+}
