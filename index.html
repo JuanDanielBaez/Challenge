@@ -1,0 +1,214 @@
+<!DOCTYPE html> 
+
+<html lang = "es">
+
+    <head>
+        
+        <meta charset="UTF-8"> <!--/>diccionario para reconocer todos los acentos y caracteres especiales<-->
+
+        <meta name="viewport" content="width=device-width"><!--queremos que use y adapte la pagina para dispositivos moviles-->
+
+        <title>INCRIPTACIÓN</title> <!--/>titulo que aparece en la pestaña del navegador<-->
+
+        <link rel="stylesheet" href="reset.css"> 
+
+        <link rel="stylesheet" href="STYLO_DESAFIO.css">
+
+    </head><!--Etiqueta de cabeza, aqui se encuntran las etiquetas informativas-->
+
+    <body>
+        
+        <header> <!--Encabezado-->
+            
+            <h1 class="titulo_principal">a</h1>   
+            
+        </header>
+
+        <main>
+       
+            <div class="area_de_entrada">
+
+                <textarea onkeypress="correccion(event)" id="entrada" placeholder="Ingrese el texto aquí" ></textarea>
+
+                <p class="instrucciones">► Solo ingrese letras minúsculas y sin acento</p>
+
+                <button id="Encriptar">Incriptar</button>
+    
+                <button id="Desencriptar">DesIncriptar</button>
+    
+            </div>         
+
+            <div class="area_de_salida">
+
+                <textarea id="salida"></textarea>
+
+                <button id="Copiar">Copiar</button>
+
+                <img id="Imagen_remplazo" src="imagenes/imagen_2.png">
+
+                <img id="mensaje_no_encontrado" src="imagenes/imagen.png">
+
+            </div>       
+               
+        </main>
+
+        <footer> <!--pie de pagina-->
+            <p class="copyright">&copy Copyright, Juan Daniel Baez B.- 2023</p>
+        </footer>
+
+    </body>
+
+</html>
+
+<script>
+
+var texto = document.getElementById("entrada");
+
+var salida = document.getElementById("salida");
+
+var button = document.getElementById("Encriptar");
+
+var button2 = document.getElementById("Desencriptar");
+
+var button3 = document.getElementById("Copiar");
+
+var img = document.getElementById("Imagen_remplazo");
+
+var img2 = document.getElementById("mensaje_no_encontrado");
+
+salida.style.display = "none";
+
+img2.style.display = "none";
+
+button3.style.display = "none";
+
+button.onclick = Encriptar;
+
+button2.onclick = DesEncriptar;
+
+button3.onclick = Copiar;
+
+texto.onclick = limpíar_casilla;
+
+
+function correccion(event) 
+{
+    var x = event.charCode;
+
+    if ((x>=97) && (x<=122) || (x==32)) 
+    {
+        texto.value = texto.value;
+    }else
+        {
+            event.preventDefault();
+
+            alert("Favor de sólo ingresar: minúsculas y sin acentos.")
+        }
+}
+
+function limpíar_casilla()
+{
+    texto.value="";
+
+    salida.style.display = "none";
+
+    button3.style.display = "none";
+
+    img2.style.display = "none"
+
+    img.style.display = "inline-block";
+}
+
+function Copiar()
+{
+    let Texto_Desincriptado = document.getElementById("salida").focus();
+
+    document.execCommand("SelectAll");
+
+    document.execCommand("copy");   
+}
+
+function Encriptar()
+{
+/*modificadore g,i,m   g= globla, i= insencity (no distincion entre mayusculas y minúsculas), []= encontrar cualquiera letra o texto entre corchetes*/
+
+    let texto_ingresado= entrada.value;
+
+    salida.style.display = "block";
+
+    texto_ingresado = texto_ingresado.replace(/[(aeiou)]/g, (match) =>{
+
+    if (match == "a") return "ai";
+
+    if (match == "e") return "enter";
+
+    if (match == "i") return "imes";
+
+    if (match == "o") return "ober";
+
+    if (match == "u") return "ufat";
+
+    });
+
+    img.style.display = "none";
+
+    img2.style.display = "none";
+
+    document.getElementById("salida").value = texto_ingresado;
+
+    button3.style.display = "block"
+
+    if(texto.value == texto_ingresado)
+    {   
+        img.style.display = "none";
+
+        salida.style.display = "none";
+
+        button3.style.display = "none";
+
+        img2.style.display = "inline"
+    }
+
+}
+
+function DesEncriptar()
+{
+    let Texto_Desincriptado= entrada.value;
+
+    salida.style.display = "block";
+
+    /* texto_ingresado = texto_ingresado.replace(/ai/g,"a");*/
+
+    Texto_Desincriptado = Texto_Desincriptado.replace(/ai|enter|imes|ober|ufat/g, (match) =>{
+
+    if (match == "ai") return "a";
+
+    if (match == "enter") return "e";
+
+    if (match == "imes") return "i";
+
+    if (match == "ober") return "o";
+
+    if (match == "ufat") return "u";
+
+    });
+
+    img.style.display = "none";
+    
+    document.getElementById("salida").value = Texto_Desincriptado;
+
+    button3.style.display = "block"
+
+    if(texto.value == Texto_Desincriptado)
+    {   
+        img.style.display = "none";
+
+        salida.style.display = "none";
+
+        button3.style.display = "none";
+
+        img2.style.display = "inline"
+    }
+
+}
+</script>
