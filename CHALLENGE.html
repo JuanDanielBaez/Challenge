@@ -32,9 +32,9 @@
 
                 <p class="instrucciones">► Solo ingrese letras minúsculas y sin acento</p>
 
-                <button id="Incriptar">Incriptar</button>
+                <button id="Encriptar">Incriptar</button>
     
-                <button id="Desincriptar">DesIncriptar</button>
+                <button id="Desencriptar">DesIncriptar</button>
     
             </div>         
 
@@ -44,13 +44,17 @@
 
                 <button id="Copiar">Copiar</button>
 
-                <img id="Imagen_remplazo" src="imagen_2.png">
+                <img id="Imagen_remplazo" src="imagenes/imagen_2.png">
 
-                <img id="mensaje_no_encontrado" src="imagen.png">
+                <img id="mensaje_no_encontrado" src="imagenes/imagen.png">
 
             </div>       
                
         </main>
+
+        <footer> <!--pie de pagina-->
+            <p class="copyright">&copy Copyright, Juan Daniel Baez B.- 2023</p>
+        </footer>
 
     </body>
 
@@ -62,9 +66,9 @@ var texto = document.getElementById("entrada");
 
 var salida = document.getElementById("salida");
 
-var button = document.getElementById("Incriptar");
+var button = document.getElementById("Encriptar");
 
-var button2 = document.getElementById("Desincriptar");
+var button2 = document.getElementById("Desencriptar");
 
 var button3 = document.getElementById("Copiar");
 
@@ -78,9 +82,9 @@ img2.style.display = "none";
 
 button3.style.display = "none";
 
-button.onclick = Incriptar;
+button.onclick = Encriptar;
 
-button2.onclick = DesIncriptar;
+button2.onclick = DesEncriptar;
 
 button3.onclick = Copiar;
 
@@ -124,10 +128,9 @@ function Copiar()
     document.execCommand("copy");   
 }
 
-function Incriptar()
+function Encriptar()
 {
 /*modificadore g,i,m   g= globla, i= insencity (no distincion entre mayusculas y minúsculas), []= encontrar cualquiera letra o texto entre corchetes*/
-
 
     let texto_ingresado= entrada.value;
 
@@ -168,7 +171,7 @@ function Incriptar()
 
 }
 
-function DesIncriptar()
+function DesEncriptar()
 {
     let Texto_Desincriptado= entrada.value;
 
@@ -206,7 +209,6 @@ function DesIncriptar()
 
         img2.style.display = "inline"
     }
-
 
 }
 </script>

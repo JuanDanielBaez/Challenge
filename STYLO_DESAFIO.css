@@ -1,8 +1,11 @@
 body
 {
-   width: 940px;
-
    background: #e6e5e5;
+}
+
+main
+{
+   width: 940px;
 }
 
 .titulo_principal
@@ -48,8 +51,8 @@ body
 }
 
 #entrada
-{
-   width: 100%;
+{ 
+   width: 85%;
 
    height: 300px;
 
@@ -73,7 +76,7 @@ body
    border-color: rgb(0, 128, 255);
 }
 
-#Incriptar, #Desincriptar,#Copiar
+#Encriptar, #Desencriptar,#Copiar
 {
    width: auto;
 
@@ -87,16 +90,16 @@ body
 
 }
 
-#Incriptar
+#Encriptar
 {
    color: white;
 
    background: rgb(28, 12, 143);
 
-   margin: 0 10%;
+   margin: 1% 10%;
 }
 
-#Desincriptar,#Copiar
+#Desencriptar,#Copiar
 {
    background: white;
 
@@ -115,9 +118,9 @@ body
 
    border-radius: 10px;
 
-   top: 80px;
+   top: 60px;
 
-   left:860px;
+   left:732px;
 
 }
 
@@ -132,10 +135,30 @@ body
    font-size: 20px;
 }
 
+footer
+{
+    text-align: center;
+
+    background: url(imagenes/bg.jpg); /*colocar imagen como backgraound*/
+
+    padding: 4px;
+
+    margin: 15px 0 0 0;
+
+}
+
+.copyright
+{
+    color: #FFFFFF;
+    
+    margin: 20px;
+}
+
+
 @media screen and (max-width:480px) /*media query recuerso para creear excepciones o condiciones,esta dice podemos crear un estilo visual que incluye pantallas de hasta 480px.*/
 {
 
-body,header, .area_de_entrada, .area_de_salida,#Imagen_remplazo,#mensaje_no_encontrado
+main,header, .area_de_entrada, .area_de_salida,#Imagen_remplazo,#mensaje_no_encontrado
 {
    width: auto;
 
@@ -145,11 +168,18 @@ body,header, .area_de_entrada, .area_de_salida,#Imagen_remplazo,#mensaje_no_enco
 
 }
 
-#Incriptar,#Desincriptar,#Imagen_remplazo,#mensaje_no_encontrado,#entrada,#salida
+#Encriptar,#Desencriptar,#Imagen_remplazo,#mensaje_no_encontrado,#entrada,#salida
 {
    width: 100%;
 
    margin: auto;
+}
+
+.area_de_entrada p
+{
+   margin: auto;
+
+   font-size: 1em;
 }
 
 
